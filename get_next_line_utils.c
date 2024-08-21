@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zkutilko <zkutilko@student.42prague.com    +#+  +:+       +#+        */
+/*   By: zkutilko <zkutilko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:08:49 by zkutilko          #+#    #+#             */
-/*   Updated: 2024/08/20 18:28:54 by zkutilko         ###   ########.fr       */
+/*   Updated: 2024/08/21 17:18:10 by zkutilko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,39 @@ char	*ft_strchr(const char *str, int c)
 // 	chr = ft_strchr(str1, c);
 // 	printf("%s", chr);
 // 	return (0);
+// }
+
+char	*get_single_line(char *str)
+{
+	char	*ptr;
+	int	i;
+
+	i = 0;
+	if (!str[i])
+		return NULL;
+	ptr = ((char *)malloc(sizeof (char) * ft_strlen(str)) + 2);
+	if (!ptr)
+		return NULL;
+	i = 0;
+	while (str[i] && str[i] != '\n')
+	{
+		ptr[i] = str[i];
+		i++;
+	}
+	if (str[i] == '\n')
+	{
+		ptr[i] = str[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+// int main()
+// {
+// 	char str[] = "hdbv\n";
+// 	char *test;
+
+// 	test = get_single_line(str);
+// 	printf("%s", test);
 // }
