@@ -6,13 +6,13 @@
 /*   By: zkutilko <zkutilko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:08:49 by zkutilko          #+#    #+#             */
-/*   Updated: 2024/09/20 18:56:37 by zkutilko         ###   ########.fr       */
+/*   Updated: 2024/09/15 16:57:57 by zkutilko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_len(char *str)
+int	ft_len(char *str)
 {
 	size_t	i;
 
@@ -32,8 +32,8 @@ size_t	ft_len(char *str)
 // }
 char	*ft_strjoin(char *str1, char *str2)
 {
-	size_t		i;
-	size_t	j;
+	int		i;
+	int		j;
 	char	*ptr;
 
 	if (!str1)
